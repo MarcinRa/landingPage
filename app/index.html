@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    
+  </head>
+  <body ng-app="landingPageApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="header">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+
+          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" ng-controller="MainCtrl">
+			<div class="container-fluid">
+				<div class="row bg">
+				 <div class="col-xs-12 col-md-6 col-sm-6">
+						<img src="images/mar.png" alt="Marcin Radoń" class="img-circle">
+				 </div>
+				 <div class="col-xs-12 col-md-6 col-sm-6">
+						<h4>Marcin Radoń</h4>
+						<h4>tel: 603-809-478</h4>
+						<h4>
+							<p><span class="glyphicon glyphicon-envelope" aria-hidden="true">:<a href="mailto:marcinradon@gmail.com">marcinradon@gmail.com</a></span></p>
+						</h4>
+						
+						<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getCV()">
+							Click Me!
+						</button>
+
+						<!-- Modal -->
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<h4 class="modal-title" id="myModalLabel">Short Bio</h4>
+									</div>
+									<div class="modal-body">
+									
+									<p class="bg-danger" ng-show="!pending">HTTP GET error!</p>
+<!--									<p class="bg-success" ng-hide="!pending">HTTP GET success</p>-->
+									
+									<div class="panel panel-default" ng-repeat="item in cv">
+										<div class="panel-heading"> {{ item.when }} </div>
+										<div class="panel-body">
+											{{item.name}}
+										</div>
+									</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+				 </div>
+				</div>
+				<div class="row marketing">
+					<h4>Lorem ipsum dolor sit amet</h4>
+					<p class="bg-primary">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ducimus ratione voluptatum quia incidunt eius omnis laboriosam optio ipsam, pariatur magni nam itaque nobis tempora quisquam sint modi exercitationem consectetur!
+					</p>
+
+					<h4>Lorem ipsum dolor sit amet</h4>
+					<p class="bg-success">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ducimus ratione voluptatum quia incidunt eius omnis laboriosam optio ipsam, pariatur magni nam itaque nobis tempora quisquam sint modi exercitationem consectetur!
+					</p>
+
+					<h4>Lorem ipsum dolor sit amet</h4>
+					<p class="bg-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ducimus ratione voluptatum quia incidunt eius omnis laboriosam optio ipsam, pariatur magni nam itaque nobis tempora quisquam sint modi exercitationem consectetur!
+						
+					</p>
+				</div>
+			</div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <p><span class="glyphicon glyphicon-heart"></span> made with love :)</p>
+      </div>
+    </div>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+				
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        
+        <!-- endbuild -->
+</body>
+</html>
